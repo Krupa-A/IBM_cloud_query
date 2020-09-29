@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+{{ wtf.quick_form(form) }}
+<br>
+<center>
+<b>Picture Names:</b><br>
+	{{ pname }}<br>
+
+<b>Images :</b><br>
+{% for image in image %}
+	{% if image %}
+		<img src="/static/images/{{image}}" width="150" height="150">
+    {% else %}
+		<h4 class="alert-heading">Image not available</h4>
+	{% endif %}
+{% endfor %}<br><br>
+<b>Price:</b><br>
+{% for price in price %}
+	{{ price }}<br>
+{% endfor %}
+<b>Description:</b><br>
+{% for description in description %}
+	{{ description }}<br>
+{% endfor %}
+</center>
+
+{% endblock %}   
